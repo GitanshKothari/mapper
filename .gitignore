@@ -1,0 +1,18 @@
+# Ignore map data files
+data/raw/*
+data/interim/*
+data/processed/*
+*.osm.pbf
+*.osm
+
+# Ignore Python cache
+__pycache__/
+*.pyc
+
+# Keep the folder structure in Git, but ignore the files inside
+!data/raw/.gitkeep
+!data/interim/.gitkeep
+!data/processed/.gitkeep
+
+# Ignore Mac system files
+**/.DS_Store
