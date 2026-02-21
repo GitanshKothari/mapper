@@ -1,18 +1,63 @@
-# Ignore map data files
+# =================================================================
+# 1. OS & SYSTEM FILES
+# =================================================================
+.DS_Store
+Thumbs.db
+*.swp
+*.log
+
+# =================================================================
+# 2. DATA (The "Data Lake")
+# =================================================================
+# Ignore all raw and interim data. We only want scripts in Git.
+# Ignore all large OSM data formats
+*.osm.pbf
+*.osm
+*.pbf
+
+# Ignore everything inside these folders by default
 data/raw/*
 data/interim/*
 data/processed/*
-*.osm.pbf
-*.osm
 
-# Ignore Python cache
-__pycache__/
-*.pyc
+# EXCEPT for .gitkeep files (the '!' means "don't ignore this")
+!**/data/**/.gitkeep
+# =================================================================
+# 3. PYTHON (Data Pipeline)
+# =================================================================
+# Ignore virtual environments regardless of where they sit
+**/venv/
+**/.venv/
 
-# Keep the folder structure in Git, but ignore the files inside
-!data/raw/.gitkeep
-!data/interim/.gitkeep
-!data/processed/.gitkeep
+# Ignore compiled Python files and caches (prevents clutter in src/)
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+**/*.pyd
 
-# Ignore Mac system files
-**/.DS_Store
+# Ignore local package distribution files (from pip install -e .)
+*.egg-info/
+build/
+dist/
+
+# =================================================================
+# 4. FRONTEND (React + Vite)
+# =================================================================
+frontend/node_modules/
+frontend/dist/
+
+# Ignore the synced data in the public folder 
+# (Since these are duplicates of data/processed)
+frontend/public/data/*.json
+
+# Local environment variables
+frontend/.env.local
+frontend/.env.*.local
+
+# =================================================================
+# 5. IDE SPECIFIC
+# =================================================================
+.vscode/
+.cursor/
+.idea/
+*.sublime-project
