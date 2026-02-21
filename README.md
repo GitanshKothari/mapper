@@ -53,6 +53,7 @@ python3 src/extractors/extract_pois.py
 
 This repository is structured as follows:
 
+```text
 toronto-routing-engine/
 │
 ├── data/ # (Ignored by Git)
@@ -63,7 +64,7 @@ toronto-routing-engine/
 ├── src/
 │ ├── extractors/ # Python scripts for parsing raw OSM Nodes and Ways
 │ │ ├── extract_pois.py
-│ │  
+│ │
 │ │
 │ ├── graph/ # (Coming Soon) NetworkX A\* routing logic
 │ │
@@ -75,3 +76,4 @@ toronto-routing-engine/
 ├── .gitignore # Prevents tracking of massive .pbf and .json files
 ├── requirements.txt # Python dependencies
 └── README.md
+```
